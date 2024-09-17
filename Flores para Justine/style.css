@@ -1,0 +1,174 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to bottom, #87CEEB, #f0f8ff);
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+.flor-contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: crecer 3s ease-in-out forwards;
+}
+
+@keyframes crecer {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.flor {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 50px;
+}
+
+.petalo {
+    position: absolute;
+    width: 100px;
+    height: 160px;
+    background: radial-gradient(circle at 50% 50%, #FF69B4, #FF1493);
+    border-radius: 50% 50% 0 0;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+    top: 10px;
+    left: 50px;
+    transform-origin: bottom center;
+    transition: transform 0.3s ease, background 0.3s ease;
+    animation: mover 5s ease-in-out infinite;
+}
+
+@keyframes mover {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.petalo:hover {
+    background: radial-gradient(circle at 50% 50%, #FFB6C1, #FF1493);
+    transform: scale(1.05);
+}
+
+.petalo:nth-child(1) {
+    transform: rotate(0deg);
+}
+.petalo:nth-child(2) {
+    transform: rotate(60deg);
+}
+.petalo:nth-child(3) {
+    transform: rotate(120deg);
+}
+.petalo:nth-child(4) {
+    transform: rotate(180deg);
+}
+.petalo:nth-child(5) {
+    transform: rotate(240deg);
+}
+.petalo:nth-child(6) {
+    transform: rotate(300deg);
+}
+
+.centro {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: #FFD700;
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.2), 0 0 15px rgba(255, 215, 0, 0.5);
+    top: 60px;
+    left: 60px;
+    animation: brillar 2s infinite alternate;
+}
+
+@keyframes brillar {
+    from {
+        box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.2), 0 0 15px rgba(255, 215, 0, 0.2);
+    }
+    to {
+        box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.2), 0 0 30px rgba(255, 215, 0, 0.8);
+    }
+}
+
+.tallo {
+    width: 10px;
+    height: 200px;
+    background-color: #228B22;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.hoja {
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    background-color: #32CD32;
+    border-radius: 50% 0 50% 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.hoja-izquierda {
+    transform: rotate(-30deg);
+    left: -60px;
+    top: 100px;
+}
+
+.hoja-derecha {
+    transform: rotate(30deg);
+    right: -60px;
+    top: 100px;
+}
+
+/* Animaciones para los mensajes de amor */
+.mensajes {
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.mensaje {
+    font-size: 20px;
+    color: #FF1493;
+    opacity: 0;
+    animation: aparecerMensaje 20s infinite;
+}
+
+@keyframes aparecerMensaje {
+    0% {
+        opacity: 0;
+    }
+    10%, 30% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 0;
+    }
+}
+
+#mensaje1 {
+    animation-delay: 0s;
+}
+#mensaje2 {
+    animation-delay: 5s;
+}
+#mensaje3 {
+    animation-delay: 10s;
+}
+#mensaje4 {
+    animation-delay: 15s;
+}
+#mensaje5 {
+    animation-delay: 20s;
+}
